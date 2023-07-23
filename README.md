@@ -3,9 +3,9 @@
 The project is on creating advanced control systems for portfolio optimization, utilizing a unique learning method for the derivative of the objective function. Initially created as an academic project in Jan/2022. 
 
 ## Introduction
-The primary aim of our project is to empower our algorithm to generate a diverse set of potential portfolios, thereby facilitating optimal diversification. This is achieved by employing a novel method of learning the derivative of the objective function with respect to portfolios, which is diffusion modelling. This approach alleviates the non-differentiability of some financial functions, such as amount of profit. It also fixs an inherent flaw of financial deep reinforcement learning on generate greedy and risky portfolio.
+The primary aim of our project is to empower our algorithm to generate a diverse set of potential portfolios, thereby facilitating optimal diversification. This is achieved by employing a novel method of learning the derivative of the objective function with respect to portfolios, which is diffusion modelling. This approach alleviates the non-differentiability of some financial functions, such as amount of profit. It also fixs an inherent flaw of financial deep reinforcement learning of generating greedy and risky portfolios.
 
-Our project leverages data from [cophieu68.com](http://cophieu68.com), designed for integration with Amibroker software.
+The algorithm is intended to generate long-term portfolios, based on time-series data; due to the high inference cost of diffusion model. The project uses data from [cophieu68.com](http://cophieu68.com), designed for integration with Amibroker software.
 
 ## Dependencies
 
@@ -25,5 +25,6 @@ pip install jax numpy matplotlib tensorflow sklearn
 
 ## Project Composition
 - Run Data Generator.ipynb file first to pre-compute linear features for price signals.
-- Then, run Model.ipynb file to define and train the Diffusion Model. The weight file is saved as numpy files (.npy)
-- Finally, run Validate.ipynb for backtesting or computing portfolios for current date.
+- Then, run Model.ipynb file to define and train the Diffusion Model. The weight file is saved as numpy files (.npy).
+- Finally, run Validate.ipynb for backtesting or computing portfolios for the current date.
+- environment_ot.py file contains the ongoing development of this project, incorporating Kantorovich optimal transport to quantify trading fees for precision trading.
